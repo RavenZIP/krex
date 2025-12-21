@@ -1,0 +1,84 @@
+# KRex
+
+<div>
+<img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.0-A831F5">
+<img alt="Compose Multiplatform" src="https://img.shields.io/badge/Compose Multiplatform-1.9.3-3b83f8">
+<img alt="Static Badge" src="https://img.shields.io/badge/API-24+-39ad31">
+</div>
+
+> 🌐 **Языки:**  
+> [Русский](README.md) | [English](docs/README-EN.md)
+
+## 🔎 Что такое KRex?
+
+KRex или kotlin reactive extensions - это ...
+
+## 🌍 Поддерживаемые платформы
+
+| Платформа | Статус              |
+|-----------|---------------------|
+| Windows   | ✅ Поддерживается    |
+| Linux     | ❓ Неизвестно        |
+| macOS     | ❓ Неизвестно        |
+| Web       | ✅ Поддерживается    |
+| Android   | ✅ Поддерживается    |
+| iOS       | ❌ Не поддерживается |
+
+Linux, macOS, iOS временно не поддерживаются, так как невозможно проверить
+работоспособность библиотеки на данной платформе
+
+## 🚀 Установка
+
+**settings.gradle.kts**
+
+```
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        ...
+        maven ("https://jitpack.io")
+    }
+}
+```
+
+**build.gradle.kts**
+
+```
+dependencies {
+      implementation("com.github.RavenZIP.krex:$version") 
+}
+```
+
+Если вы используете libs.versions.toml
+
+**libs.versions.toml**
+
+```
+[versions]
+ravenzip-krex = "$version"
+
+[libraries]
+ravenzip-krex = { module = "com.github.RavenZIP.krex", version.ref = "ravenzip-krex" }
+```
+
+**build.gradle.kts**
+
+```
+dependencies {
+      implementation(libs.ravenzip.krex)
+}
+```
+
+## 🚬 Использование
+
+Скоро...
+
+## 📜 Лицензия
+
+Эта библиотека распространяется по лицензии Apache 2.0. Подробности смотрите в файле [ЛИЦЕНЗИЯ](LICENSE).
+
+## 👾 Разработчик
+
+**Черных Александр**
+
+- [Telegram](https://t.me/RavenZIP)
