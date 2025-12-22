@@ -1,17 +1,20 @@
-# KRex
+# KREX
 
-<div>
+<p align="center">
+<img alt="Logo" src="images/logo.png" width="100%">
+
 <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.0-A831F5">
 <img alt="Compose Multiplatform" src="https://img.shields.io/badge/Compose Multiplatform-1.9.3-3b83f8">
 <img alt="Static Badge" src="https://img.shields.io/badge/API-24+-39ad31">
-</div>
+</p>
 
 > 🌐 **Languages:**  
 > [English](README-EN.md) | [Русский](../README.md)
 
-## 🔎 Что такое KRex?
+## 🔎 What is KREX?
 
-KRex or Kotlin Reactive EXtensions - is are ...
+KREX (Kotlin Reactive EXtensions) is a Kotlin Multiplatform library
+that extends the standard features of Coroutines and Kotlin Flow.
 
 ## 🌍 Supported platforms
 
