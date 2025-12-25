@@ -38,7 +38,7 @@ dependencyResolutionManagement {
 
 ```
 dependencies {
-      implementation("com.github.RavenZIP.krex:$version") 
+      implementation("com.github.RavenZIP.krex:core:$version") 
 }
 ```
 
@@ -51,14 +51,14 @@ If you are using libs.versions.toml
 ravenzip-krex = "$version"
 
 [libraries]
-ravenzip-krex = { module = "com.github.RavenZIP.krex", version.ref = "ravenzip-krex" }
+ravenzip-krex-core = { module = "com.github.RavenZIP.krex:core", version.ref = "ravenzip-krex" }
 ```
 
 **build.gradle.kts**
 
 ```
 dependencies {
-      implementation(libs.ravenzip.krex)
+      implementation(libs.ravenzip.krex.core)
 }
 ```
 
