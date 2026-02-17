@@ -3,8 +3,7 @@
 <p align="center">
 <img alt="Logo" src="images/logo.png" width="100%">
 
-<img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.0-A831F5">
-<img alt="Compose Multiplatform" src="https://img.shields.io/badge/Compose Multiplatform-1.9.3-3b83f8">
+<img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.10-A831F5">
 <img alt="Static Badge" src="https://img.shields.io/badge/API-24+-39ad31">
 </p>
 
@@ -38,7 +37,7 @@ dependencyResolutionManagement {
 
 ```
 dependencies {
-      implementation("com.github.RavenZIP.krex:core:$version") 
+      implementation("com.github.RavenZIP.krex:krex-core:$version") 
 }
 ```
 
@@ -51,7 +50,7 @@ If you are using libs.versions.toml
 ravenzip-krex = "$version"
 
 [libraries]
-ravenzip-krex-core = { module = "com.github.RavenZIP.krex:core", version.ref = "ravenzip-krex" }
+ravenzip-krex-core = { module = "com.github.RavenZIP.krex:krex-core", version.ref = "ravenzip-krex" }
 ```
 
 **build.gradle.kts**
