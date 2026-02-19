@@ -5,6 +5,9 @@
 
 <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.10-A831F5">
 <img alt="Static Badge" src="https://img.shields.io/badge/API-24+-39ad31">
+<a href="https://jitpack.io/#RavenZIP/krex">
+  <img src="https://jitpack.io/v/RavenZIP/krex.svg">
+</a>
 </p>
 
 > 🌐 **Языки:**  
