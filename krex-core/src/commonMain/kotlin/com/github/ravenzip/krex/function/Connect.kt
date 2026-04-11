@@ -6,36 +6,36 @@ import kotlinx.coroutines.flow.*
 
 class ConnectedFlow<T>
 internal constructor(
-    internal val source: MutableStateFlow<T>,
-    internal val flows: MutableList<Flow<T>> = mutableListOf(),
-)
+    private val source: MutableStateFlow<T>,
+    private val flows: List<Flow<T>> = emptyList(),
+) {
+    fun with(
+        flow: Flow<T>,
+        update: ((previous: T, current: T) -> T) = { _, current -> current },
+    ): ConnectedFlow<T> {
+        val flowWithUpdateSource = createFlowWithUpdateSource(source, flow, update)
+        val connectedFlow = ConnectedFlow(source, flows + flowWithUpdateSource)
 
-fun <T> MutableStateFlow<T>.with(
+        return connectedFlow
+    }
+
+    fun launchIn(scope: CoroutineScope): Job = flows.merge().launchIn(scope)
+
+    suspend fun collect() = flows.merge().collect()
+}
+
+internal fun <T> createFlowWithUpdateSource(
+    source: MutableStateFlow<T>,
+    flow: Flow<T>,
+    update: ((previous: T, current: T) -> T) = { _, current -> current },
+) = flow.onEach { current -> source.update { previous -> update(previous, current) } }
+
+fun <T> MutableStateFlow<T>.connectWith(
     flow: Flow<T>,
     update: ((previous: T, current: T) -> T) = { _, current -> current },
 ): ConnectedFlow<T> {
-    val flowWithUpdateSource = flow.onEach { current ->
-        this.update { previous -> update(previous, current) }
-    }
-    val connectedFlow = ConnectedFlow(this)
-    connectedFlow.flows.add(flowWithUpdateSource)
+    val flowWithUpdateSource = createFlowWithUpdateSource(this, flow, update)
+    val connectedFlow = ConnectedFlow(this, listOf(flowWithUpdateSource))
 
     return connectedFlow
 }
-
-fun <T> ConnectedFlow<T>.with(
-    flow: Flow<T>,
-    update: ((previous: T, current: T) -> T) = { _, current -> current },
-): ConnectedFlow<T> {
-    val flowWithUpdateSource = flow.onEach { current ->
-        this.source.update { previous -> update(previous, current) }
-    }
-    this.flows.add(flowWithUpdateSource)
-
-    return this
-}
-
-fun <T> ConnectedFlow<T>.launchIn(scope: CoroutineScope): Job =
-    merge(*this.flows.toTypedArray()).launchIn(scope)
-
-suspend fun <T> ConnectedFlow<T>.collect(): Unit = merge(*this.flows.toTypedArray()).collect()
