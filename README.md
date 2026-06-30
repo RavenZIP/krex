@@ -15,8 +15,7 @@
 
 ## 🔎 Что такое KREX?
 
-KREX (Kotlin Reactive EXtensions) - это Kotlin Multiplatform библиотека,
-расширяющая стандартные возможности Coroutines и Kotlin Flow.
+KREX (Kotlin Reactive EXtensions) - это Kotlin Multiplatform библиотека, расширяющая стандартные возможности Coroutines и Kotlin Flow.
 
 ## 🌍 Поддерживаемые платформы
 
@@ -29,8 +28,18 @@ KREX (Kotlin Reactive EXtensions) - это Kotlin Multiplatform библиоте
 | Android   | ✅ Поддерживается    |
 | iOS       | ❌ Не поддерживается |
 
-Linux, macOS, iOS временно не поддерживаются, так как невозможно проверить
-работоспособность библиотеки на данной платформе
+Linux, macOS, iOS временно не поддерживаются, так как невозможно проверить работоспособность библиотеки на данной платформе
+
+## 🌳 Структура проекта
+
+### - krex-core
+Основной модуль библиотеки. Содержит Kotlin Flow операторы
+
+### - docs
+Документация проекта.
+
+### - images
+Изображения, используемые в README и документации.
 
 ## 🚀 Установка
 
